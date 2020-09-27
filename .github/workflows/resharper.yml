@@ -15,6 +15,4 @@ jobs:
         uses: glassechidna/resharper-action@master
         with:
           solution: statisticker.sln
-       
-      - name: Check Reports
-        run: powershell ./resharper.ps1
+
