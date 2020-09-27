@@ -6,13 +6,19 @@ on:
  
 jobs:
   resharper:
-    runs-on: window-latest
+    runs-on: windows-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
       
-      - name: resharper
-        uses: glassechidna/resharper-action@master
-        with:
-          solution: statisticker.sln
-
+      - name: Install resharper
+        run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
+        
+      - name: Run resharper inspection
+        run: jb inspectcode statisticker.sln /output=insreport.xml
+       
+      - name: Run resharper duplicate code check
+        run: jb dupfinder statisticker.sln /output=dupreport.xml
+       
+      - name: Check Reports
+        run: powershell ./resharper.ps1
