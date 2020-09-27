@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
-using Statistics;
 
 namespace Statistics.Test
 {
@@ -14,9 +13,9 @@ namespace Statistics.Test
             var computedStats = statsComputer.CalculateStatistics(
                 new List<float> { 1.5F, 8.9F, 3.2F, 4.5F });
             float epsilon = 0.001F;
-            Assert.True(Math.Abs(computedStats.average - 4.525) <= epsilon);
-            Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
-            Assert.True(Math.Abs(computedStats.min - 1.5) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Average - 4.525) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Max - 8.9) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Min - 1.5) <= epsilon);
         }
 
         [Fact]
@@ -29,9 +28,9 @@ namespace Statistics.Test
             //Double.NaN (not-a-number), as described in
             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
 
-            Assert.True(float.IsNaN(computedStats.max));
-            Assert.True(float.IsNaN(computedStats.min));
-            Assert.True(float.IsNaN(computedStats.average));
+            Assert.True(float.IsNaN(computedStats.Max));
+            Assert.True(float.IsNaN(computedStats.Min));
+            Assert.True(float.IsNaN(computedStats.Average));
         }
 
         [Fact]
@@ -43,9 +42,9 @@ namespace Statistics.Test
 
             float epsilon = 0.001F;
 
-            Assert.True(Math.Abs(computedStats.average - 5.7246) <= epsilon);
-            Assert.True(Math.Abs(computedStats.max - 9.6) <= epsilon);
-            Assert.True(Math.Abs(computedStats.min - 2.8) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Average - 5.7246) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Max - 9.6) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Min - 2.8) <= epsilon);
 
         }
     }

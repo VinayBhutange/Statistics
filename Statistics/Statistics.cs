@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Statistics
@@ -16,9 +15,9 @@ namespace Statistics
                 {
                     numbers.RemoveAll(float.IsNaN);
                 }
-                stats.average = numbers.Average();
-                stats.max = numbers.Max();
-                stats.min = numbers.Min();
+                stats.Average = numbers.Average();
+                stats.Max = numbers.Max();
+                stats.Min = numbers.Min();
             }
 
             return stats;

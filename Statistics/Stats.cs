@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Statistics
+﻿namespace Statistics
 {
     public class Stats
     {
-        public float average;
-        public float max;
-        public float min;
+        public float Average;
+        public float Max;
+        public float Min;
 
         public Stats()
         {
-            this.average = float.NaN;
-            this.min = float.NaN;
-            this.max = float.NaN;
+            this.Average = float.NaN;
+            this.Min = float.NaN;
+            this.Max = float.NaN;
         }
 
     }
